@@ -87,7 +87,10 @@ namespace MothDIed.GUI
         {
             foreach (var child in children)
             {
-                child.OnOtherHidden(child);
+                if(child != element)
+                {
+                    child.OnOtherHidden(element);
+                }
             }
         }
 
@@ -95,7 +98,10 @@ namespace MothDIed.GUI
         {
             foreach (var child in children)
             {
-                child.OnOtherShown(child);
+                if(child != element)
+                {
+                    child.OnOtherShown(element);
+                }
             }
         }
     }
