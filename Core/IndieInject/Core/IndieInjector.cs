@@ -53,7 +53,7 @@ namespace MothDIed.DI
                 = startPoint.transform.GetComponentsInChildren<IDependenciesProvider>();
 
             Register(providers, coreContainer);
-            Register(startPoint.DependenciesProviders, coreContainer);
+            Register(startPoint.GetProviders(), coreContainer);
         }
         
         public void RegisterSceneDependencies(Scene scene)

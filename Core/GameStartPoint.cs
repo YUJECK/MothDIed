@@ -1,16 +1,18 @@
+using System;
 using MothDIed;
 using MothDIed.DI;
-using Sample;
 using UnityEngine;
 
-public class GameStartPoint : MonoBehaviour
+public abstract class GameStartPoint : MonoBehaviour
 {
-    public IDependenciesProvider[] DependenciesProviders = {};
+    public virtual IDependenciesProvider[] GetProviders() { return Array.Empty<IDependenciesProvider>(); }
 
     private void Start()
     {
         Game.Injector.RegisterDependenciesToCore(this);
-        
-        Game.SwitchTo(new MainMenuScene());
+
+        StartGame();
     }
+
+    protected abstract void StartGame();
 }
