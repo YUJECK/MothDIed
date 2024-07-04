@@ -2,10 +2,5 @@
 {
     public class CommonLayer : GUILayer
     {
-        private CommonLayer layer;
-        
-        private async void Start()
-        {
-        }
     }
 }
